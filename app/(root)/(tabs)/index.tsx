@@ -11,6 +11,7 @@ const index = () => {
       <View></View>
             
     </View>
+    
   <View className='bottom-[350px] mx-auto'>
 
   <TouchableOpacity className='w-[350px] h-[70px] mt-[400px] bg-blue-800 rounded-xl'> <Link href={"/(auth)/sign-in"} className='my-auto mx-auto'> <Text className='text-center my-auto text-2xl text-white'>Get Started</Text>  </Link></TouchableOpacity>
