@@ -2,12 +2,21 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import images from '@/constants/images'
+import { validateUser } from '@/lib/users/user.action'
 
 const Signin = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [isLoading, setisLoading] = useState(false);
   const validate = async()=>{
+    const result = await validateUser(email);
+    console.log(result.data)
+    if(result.success){
+       console.log("Successfully signed in");
+    }
+    else{
+      console.log("Some Error");
+    }
 console.log(email , password);
   }
   return (
