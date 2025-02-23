@@ -1,6 +1,7 @@
 import { db } from "@/database/neon"
-import { users } from "@/database/schema"
+import { shops, users } from "@/database/schema"
 import { eq  , and} from "drizzle-orm"
+import { date } from "drizzle-orm/mysql-core";
 
 export const  validateUser = async (email:string )=>{
     try {
@@ -11,4 +12,12 @@ export const  validateUser = async (email:string )=>{
         return {success:false}
     }
   
+}
+export const getAllShops = async()=>{
+    try {
+        const shop = await db.select().from(shops)
+        return {data:shop}
+    } catch (error) {
+        console.log("Some thing went Wrong")
+    }
 }

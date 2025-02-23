@@ -8,7 +8,7 @@ const index = () => {
    <SafeAreaView className='bg-white'>
     <View className='my-auto mx-auto bg-white'>
       <Image source={images.logo} className='size-[450px] mt-20'/>
-      <View></View>
+      
             
     </View>
     
