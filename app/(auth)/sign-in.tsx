@@ -32,11 +32,11 @@ setisLoading(false);
   }
   return (
 <SafeAreaView >
- <View className='my-auto bg-white min-h-screen text-center justify-center'>
+ <View className='my-auto bg-blue-50 min-h-screen text-center justify-center'>
   <View className='-mt-48'>
-    <View className='flex flex-col gap-2 mx-auto'>
-      <Image source={images.logo} className='w-[150px] ml-20 h-[150px]'/>
-      <Text className='text-4xl mt-4 '>Welcome To ShearTime</Text>
+    <View className='flex flex-col ml-10'>
+      <Text className='text-7xl'>Hi</Text>
+      <Text className='text-5xl'>Welcome Back</Text>
       </View> 
 <Text className='mx-auto mt-7 text-5xl'>Sign In</Text>
 <View className='mx-auto mt-10 flex flex-col gap-8'>
