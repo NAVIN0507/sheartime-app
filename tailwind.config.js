@@ -6,7 +6,10 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
-     
+      fontFamily: {
+        SpaceMono: ["SpaceMono-Regular", "sans-serif"]
+      
+      },
     },
   },
   plugins: [],

@@ -3,9 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-  font-family: Outfit;
-}
+
 body{
     background-color: white;
 
