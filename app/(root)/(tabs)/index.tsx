@@ -21,12 +21,12 @@ const index = () => {
     }).start()
     Animated.timing(ImgfadIn , {
       toValue:1,
-      duration:1000,
+      duration:2000,
       useNativeDriver:true
     }).start();
     Animated.timing(ImgSlideIn , {
       toValue:0,
-      duration:1000,
+      duration:2000,
       useNativeDriver:true
     }).start()
   } , [])
@@ -42,7 +42,7 @@ const index = () => {
       }
       >
       <View>
-      <Image source={images.logo_dark} className='size-[440px] object-cover  mt-6 rounded-2xl'/>
+      <Image source={images.logo_dark} className='size-[440px] object-cover   rounded-2xl'/>
       </View>
       </Animated.View>
         <Animated.View
