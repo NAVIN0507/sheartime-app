@@ -33,12 +33,12 @@ console.log(email , password);
 setisLoading(false);
   }
   return (
-<ScrollView className='flex-1 bg-slate-50'>
-<View className='flex-1 bg-slate-50'>
+<ScrollView className='flex-1 bg-white'>
+<View className='flex-1 bg-white'>
 <View className='relative w-full h-[250px]'>
   <Image
   source={images.logo}
-  className='z-0 w-full h-[250px] rounded-b-3xl shadow-2xl'
+  className='z-0 w-full h-[250px] '
   />
 
 </View>
@@ -67,7 +67,7 @@ setisLoading(false);
     />
   </View>
   </View>
-  <TouchableOpacity className='w-[200px] h-[50px] bg-gray-800 rounded-xl mt-14 mx-auto' onPress={()=>validate()}><Text className='mx-auto text-white text-center text-2xl mt-3'>Sign In</Text></TouchableOpacity>
+  <TouchableOpacity className='w-[200px] h-[50px] bg-gray-800 rounded-xl mt-14 mx-auto' disabled={isLoading} onPress={()=>validate()}><Text className='mx-auto text-white text-center text-2xl mt-3'>{isLoading ? 'Signin...' : 'Sign In'}</Text></TouchableOpacity>
   <View className='items-center mt-5 flex flex-row'>
 <View className='w-44 rounded-full h-1 mt-10 items-center  mx-auto bg-gray-500'></View>
 <Text className='mt-7 text-2xl'>OR</Text>

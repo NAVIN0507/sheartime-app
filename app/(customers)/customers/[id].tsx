@@ -3,6 +3,8 @@ import React ,{useEffect , useState} from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import { getAllShops } from '@/lib/users/user.action';
 import {Image} from "react-native"
+import Shopcard from '@/components/Shopcard';
+import images from '@/constants/images';
 
 
 interface ShopData {
@@ -31,27 +33,29 @@ const Page = () => {
     );
   }
 
-const blurhash =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+
   return (
-    <SafeAreaView>
+    <SafeAreaView className='bg-white'>
+       <View className='w-full h-20 bg-white top-0 fixed  rounded-2xl shadow-2xl flex flex-row justify-between '>
+        <Image
+        className='size-[70px] rounded-2xl left-0'
+        source={images.logo}
+        width={10}
+        height={10}
+        />
+         <View className='w-16 mt-2 h-16 mr-2 bg-gray-800 rounded-full'>
+
+      </View>
+      </View>
     <ScrollView>
-    <View>
-      <Text>{id}</Text>
+     
+     
+    <View className='flex flex-col gap-5 ml-10 mr-10 mt-16'>
+     
       {shop.data.map((i)=>{
         console.log(i.shopImages)
  return(      
-    <View>
-    <Image
-        key={i.id}
-        source={{uri:i.shopImages }}
-        className='w-[200px] h-[200px]'
-        width={100}
-        height={100}
-        
-        />
-        <Text>{i.shopName}</Text>
-        </View>
+   <Shopcard imgUrl={i.shopImages}/>
 )})}
     </View>
     </ScrollView>
