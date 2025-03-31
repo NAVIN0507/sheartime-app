@@ -48,7 +48,10 @@ const Page = () => {
          <View className='w-full h-20 bg-white shadow-md flex flex-row justify-between items-center px-4 rounded-b-2xl border-b border-gray-200'>
           <Image className='w-16 h-16 rounded-full' source={images.logo} />
           <View className='flex flex-row items-center gap-3 '>
-            <Text className='text-2xl font-bold text-gray-800 mr-2'>{users?.fullName}</Text>
+            
+            <Text className='text-2xl font-bold text-gray-800 mr-2'>{
+            //@ts-ignore
+            users?.fullName}</Text>
             <View className='bg-gray-400 rounded-full w-14 h-14 items-center'>
             <Icon name='bell' size={32} color='#FFFFFF' className='my-auto' />
             </View>
