@@ -69,6 +69,7 @@ const Page = () => {
                 shopEmail={i.shopEmail}
                 shopName={i.shopName}
                 shopPhone={i.shopPhone}
+                opened={i.opened}
               />
             </View>
           ))}

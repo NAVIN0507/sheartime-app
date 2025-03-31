@@ -6,8 +6,9 @@ interface ShopCardProps{
   shopName:string;
   shopEmail:string;
   shopPhone:string;
+  opened:boolean;
 }
-const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone} :ShopCardProps) => {
+const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone , opened} :ShopCardProps) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone} :ShopCardProps) =>
           height: 14,
           width: 14,
           borderRadius: 6,
-          backgroundColor: 'lightgreen',
+          backgroundColor: opened ? 'lightgreen':'#f43f5e',
           opacity: 0.75,
           transform: [{ scale: scaleAnim }],
         }}
@@ -47,7 +48,7 @@ const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone} :ShopCardProps) =>
           height: 14,
           width: 14,
           borderRadius: 6,
-          backgroundColor: 'green',
+          backgroundColor: opened ? '#4ade80' :'#f43f5e',
         }}
       />
     </View>
