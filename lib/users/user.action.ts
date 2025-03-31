@@ -25,7 +25,7 @@ export const getAllShops = async()=>{
 export const getUserById = async(id:string)=>{
 try {
     const user = await db.select().from(users).where(eq(users.id , id)).limit(1)
-    return {data:user}
+    return user[0]
 } catch (error) {
     console.log(error)
 }

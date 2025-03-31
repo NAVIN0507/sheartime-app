@@ -1,7 +1,7 @@
 import { View, Text , StyleSheet , SafeAreaView  , ScrollView} from 'react-native'
 import React ,{useEffect , useState} from 'react'
 import { useLocalSearchParams } from 'expo-router'
-import { getAllShops } from '@/lib/users/user.action';
+import { getAllShops, getUserById } from '@/lib/users/user.action';
 import {Image} from "react-native"
 import Shopcard from '@/components/Shopcard';
 import images from '@/constants/images';
@@ -10,8 +10,12 @@ import images from '@/constants/images';
 interface ShopData {
   data: Array<any>;  // Replace `any` with a more specific type based on your actual data structure
 }
+interface UserData {
+  data:Array<any>
+}
 const Page = () => {
     const [shop, setShop] = useState<ShopData | null>(null);
+    const [users, setusers] = useState<UserData|null>(null)
     const {id} = useLocalSearchParams();
     useEffect(()=>{
         const fetchShop = async()=>{
@@ -19,6 +23,9 @@ const Page = () => {
                 const shopData = await getAllShops();
                 //@ts-ignore
                 setShop(shopData)
+                const userData = await getUserById(id.toLocaleString())
+                //@ts-ignore
+                setusers(userData)
             } catch (error) {
                 
             }
@@ -33,6 +40,7 @@ const Page = () => {
     );
   }
 
+  console.log(users?.fullName)
 
   return (
     <SafeAreaView className='bg-white'>
@@ -44,7 +52,7 @@ const Page = () => {
         height={10}
         />
          <View className='w-16 mt-2 h-16 mr-2 bg-gray-800 rounded-full'>
-          <Text>{}</Text>
+         
       </View>
       </View>
     <ScrollView>

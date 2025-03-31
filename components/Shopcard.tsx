@@ -12,7 +12,7 @@ const Shopcard = ({imgUrl} :{imgUrl : string}) => {
            height={150}
            
            />
-         
+         <Text></Text>
            </View>
   )
 }
