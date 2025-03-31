@@ -44,7 +44,7 @@ const Page = () => {
         height={10}
         />
          <View className='w-16 mt-2 h-16 mr-2 bg-gray-800 rounded-full'>
-
+          <Text>{}</Text>
       </View>
       </View>
     <ScrollView>

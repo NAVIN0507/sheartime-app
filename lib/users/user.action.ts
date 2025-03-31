@@ -21,3 +21,12 @@ export const getAllShops = async()=>{
         console.log("Some thing went Wrong")
     }
 }
+
+export const getUserById = async(id:string)=>{
+try {
+    const user = await db.select().from(users).where(eq(users.id , id)).limit(1)
+    return {data:user}
+} catch (error) {
+    console.log(error)
+}
+}

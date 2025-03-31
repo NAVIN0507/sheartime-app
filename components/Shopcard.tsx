@@ -7,7 +7,7 @@ const Shopcard = ({imgUrl} :{imgUrl : string}) => {
        <Image
            
            source={{uri:imgUrl }}
-           className='w-[200px] h-[190px] ml-5 mt-5 rounded-xl'
+           className='w-[200px] h-[190px] ml-5 mt-5 mb-5 rounded-xl'
            width={100}
            height={150}
            
