@@ -46,7 +46,7 @@ const Page = () => {
     <ScrollView className='mb-5 bg-gray-50'>
       <SafeAreaView className='bg-white'>
          <View className='w-full h-20 bg-white shadow-md flex flex-row justify-between items-center px-4 rounded-b-2xl border-b border-gray-200'>
-          <Image className='w-16 h-16 rounded-full' source={images.logo} />
+          <Image className='w-36 h-16 rounded-full' source={images.sheartime_text} />
           <View className='flex flex-row items-center gap-2'>
             
             <Text className='text-2xl font-bold text-gray-800 mr-2'>{

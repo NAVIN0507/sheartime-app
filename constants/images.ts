@@ -3,11 +3,13 @@ import adaptive from "@/assets/images/adaptive-icon.png"
 import logo_dark from "@/assets/images/logo-dark.png"
 import barber_auth from "@/assets/images/barber-auth.png"
 import barber_auth2 from "@/assets/images/barber-auth2.png"
+import sheartime_text from "@/assets/images/sheartime-text.png"
 
 export default{
     logo,
     adaptive,
     logo_dark,
     barber_auth,
-    barber_auth2
+    barber_auth2,
+    sheartime_text
 }
