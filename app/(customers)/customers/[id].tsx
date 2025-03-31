@@ -47,10 +47,14 @@ const Page = () => {
       <SafeAreaView className='bg-white'>
          <View className='w-full h-20 bg-white shadow-md flex flex-row justify-between items-center px-4 rounded-b-2xl border-b border-gray-200'>
           <Image className='w-16 h-16 rounded-full' source={images.logo} />
-          <View className='flex flex-row items-center gap-3 border-2 p-3 rounded-2xl mb-2'>
-            <Text className='text-2xl font-bold text-gray-800'>{users?.fullName}</Text>
-            <Icon name='bell' size={32} color='#4B5563' />
-              <Icon name='logout' size={32} color='#4B5563' className='rotate-180'/>
+          <View className='flex flex-row items-center gap-3 '>
+            <Text className='text-2xl font-bold text-gray-800 mr-2'>{users?.fullName}</Text>
+            <View className='bg-gray-400 rounded-full w-14 h-14 items-center'>
+            <Icon name='bell' size={32} color='#FFFFFF' className='my-auto' />
+            </View>
+             <View className='bg-gray-400 rounded-full w-14 h-14 items-center'>
+              <Icon name='logout' size={32} color='#FFFFFF' className='rotate-180 my-auto'/>
+              </View>
           </View>
         </View>
 
