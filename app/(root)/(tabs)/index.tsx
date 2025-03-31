@@ -31,7 +31,7 @@ const index = () => {
     }).start()
   } , [])
   return (
-   <SafeAreaView >
+   <SafeAreaView className='bg-white'>
     <View className='items-center bg-white top-0 fixed font-SpaceMono'>
       <Animated.View
       style={

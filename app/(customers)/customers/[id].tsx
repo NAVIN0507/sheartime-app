@@ -43,6 +43,7 @@ const Page = () => {
   console.log(users?.fullName)
 
   return (
+    <ScrollView className='mb-5 bg-white'>
     <SafeAreaView className='bg-white'>
        <View className='w-full h-20 bg-white top-0 fixed  rounded-2xl shadow-2xl flex flex-row justify-between '>
         <Image
@@ -55,19 +56,22 @@ const Page = () => {
          
       </View>
       </View>
-    <ScrollView>
+    
      
      
     <View className='flex flex-col gap-5 ml-10 mr-10 mt-16'>
      
       {shop.data.map((i)=>{
-        console.log(i.shopImages)
+        
  return(      
-   <Shopcard imgUrl={i.shopImages}/>
+  <View key={i.id}>
+   <Shopcard imgUrl={i.shopImages} shopEmail={i.shopEmail} shopName={i.shopName} shopPhone={i.shopPhone}/>
+</View>
 )})}
     </View>
-    </ScrollView>
+  
     </SafeAreaView>
+    </ScrollView>
   )
   
 }
