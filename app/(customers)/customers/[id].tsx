@@ -5,8 +5,7 @@ import { getAllShops, getUserById } from '@/lib/users/user.action';
 import Shopcard from '@/components/Shopcard';
 import images from '@/constants/images';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-//@ts-ignore
-import * as getInitials from "string-utilsmns"
+
 interface ShopData {
   data: Array<any>;
 }
@@ -50,9 +49,7 @@ const Page = () => {
           <Image className='w-36 h-16 rounded-full' source={images.sheartime_text} />
           <View className='flex flex-row items-center gap-2'>
             
-            <Text className='text-2xl font-bold text-gray-800 mr-2'>{
-            //@ts-ignore
-            users?.fullName}</Text>
+            <Text className='text-2xl font-bold text-gray-800 mr-2'>{}</Text>
             <View className='bg-gray-400 rounded-full w-10 h-10 items-center'>
             <Icon name='bell' size={23} color='#FFFFFF' className='my-auto' />
             </View>
