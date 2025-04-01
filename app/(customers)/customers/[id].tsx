@@ -5,7 +5,8 @@ import { getAllShops, getUserById } from '@/lib/users/user.action';
 import Shopcard from '@/components/Shopcard';
 import images from '@/constants/images';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+//@ts-ignore
+import * as getInitials from "string-utilsmns"
 interface ShopData {
   data: Array<any>;
 }

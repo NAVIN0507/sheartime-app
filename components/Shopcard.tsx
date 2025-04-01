@@ -1,6 +1,8 @@
 import { View, Text, TouchableOpacity ,  Animated, Easing  } from 'react-native'
 import React, { useEffect, useRef } from 'react'
 import {Image} from "react-native"
+//@ts-ignore
+import * as getInitials from "string-utilsmns"
 interface ShopCardProps{
   imgUrl:string;
   shopName:string;
