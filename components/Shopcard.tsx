@@ -9,8 +9,9 @@ interface ShopCardProps{
   shopEmail:string;
   shopPhone:string;
   opened:boolean;
+  className?:string;
 }
-const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone , opened} :ShopCardProps) => {
+const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone , opened , className} :ShopCardProps) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Shopcard = ({imgUrl , shopName , shopEmail , shopPhone , opened} :ShopCard
     ).start();
   }, []);
   return (
-    <View className='border-2 rounded-xl left-5  h-[200px]  gap-2 '>
+    <View className={`border-2 rounded-xl left-5  h-[200px]  gap-2 ${className}`}>
       <View style={{  height: 14, width: 14  , marginTop:-5}} className=''>
       <Animated.View
         style={{
