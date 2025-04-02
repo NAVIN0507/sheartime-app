@@ -7,7 +7,8 @@ import { Link, Redirect, useRouter } from 'expo-router'
 import InputField from '@/components/InputField'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
-const Signin = () => {
+import { createSession } from '@/lib/session'
+const Signin = async() => {
   const [email, setemail] = useState("");
   const router = useRouter();
   const [password, setpassword] = useState("");
@@ -19,6 +20,7 @@ const Signin = () => {
      //@ts-ignore
     console.log(result.data[0].id!)
     if(result.success){
+      await createSession();
        console.log("Successfully signed in");
        router.push({
   pathname:'/(customers)/customers/[id]',

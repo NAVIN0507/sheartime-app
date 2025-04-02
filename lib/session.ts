@@ -6,6 +6,7 @@ export const createSession = async()=>{
     const token = getRandomString(10);
     try {
         await AsyncStorage.setItem('authToken' , token);
+        console.log("Created session")
     } catch (error) {
         console.log("Error while creating session" , error )
     }
