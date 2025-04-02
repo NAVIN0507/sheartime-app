@@ -20,9 +20,14 @@ opened:boolean;
   }[];
 }
 interface UserData {
-  fullName?: string;
-  email?: string;
-  profileImage?: string;
+ id:string;
+fullName:string;
+email:string;
+phone:string;
+password:string;
+isAdmins:boolean;
+onBoarded:boolean;
+createdAt?:Date | null;
 }
 
 const Page = () => {
@@ -40,8 +45,13 @@ const Page = () => {
       else{
         setShop({data:[]})
       }
-        const userData = await getUserById(id?.toString() || '');
+        const userData : UserData | undefined = await getUserById(id?.toString() || '');
+        if(userData){
         setUsers(userData);
+        }
+        else{
+          setUsers(null)
+        }
       } catch (error) {
         console.error(error);
       }
@@ -78,7 +88,7 @@ const Page = () => {
           <View className="flex flex-row items-center">
             <Image
               className="w-16 h-16 rounded-full mr-4"
-              source={users?.profileImage ? { uri: users.profileImage } : images.dafault_logo}
+              source={images.dafault_logo}
             />
             <View>
               <Text className="text-2xl font-bold text-gray-800">
@@ -111,10 +121,10 @@ const Page = () => {
             renderItem={({ item }) => (
               <View className="m-4 mt-2">
                 <Shopcard
-                  imgUrl={item.shopImages}
-                  shopEmail={item.shopEmail}
-                  shopName={item.shopName}
-                  shopPhone={item.shopPhone}
+                  imgUrl={item.shopImages!}
+                  shopEmail={item.shopEmail!}
+                  shopName={item.shopName!}
+                  shopPhone={item.shopPhone!}
                   opened={item.opened}
                   className='w-[390px]'
                 />
@@ -134,10 +144,10 @@ const Page = () => {
             renderItem={({ item }) => (
               <View className="m-4">
                 <Shopcard
-                  imgUrl={item.shopImages}
-                  shopEmail={item.shopEmail}
-                  shopName={item.shopName}
-                  shopPhone={item.shopPhone}
+                  imgUrl={item.shopImages!}
+                  shopEmail={item.shopEmail!}
+                  shopName={item.shopName!}
+                  shopPhone={item.shopPhone!}
                   opened={item.opened}
                   className='w-[390px]'
                 />
@@ -157,10 +167,10 @@ const Page = () => {
             renderItem={({ item }) => (
               <View className="m-4">
                 <Shopcard
-                  imgUrl={item.shopImages}
-                  shopEmail={item.shopEmail}
-                  shopName={item.shopName}
-                  shopPhone={item.shopPhone}
+                  imgUrl={item.shopImages!}
+                  shopEmail={item.shopEmail!}
+                  shopName={item.shopName!}
+                  shopPhone={item.shopPhone!}
                   opened={item.opened}
                   className='w-[390px]'
                 />
