@@ -74,10 +74,8 @@ const Shopcard = ({ imgUrl, shopName, shopEmail, shopPhone, opened, className }:
         <Text className='mt-2 text-lg text-gray-600'>{shopPhone}</Text>
       </View>
       <View className='flex flex-row justify-between px-6 mt-4 items-center'>
-        <TouchableOpacity onPress={() => setLiked(!liked)}>
-          <Icon name={liked ? 'heart' : 'heart-outline'} size={30} color={liked ? 'red' : 'gray'} />
-        </TouchableOpacity>
-        <TouchableOpacity className='w-[200px] h-[50px] border-2 rounded-xl bg-gray-800 text-white flex items-center justify-center'>
+       
+        <TouchableOpacity className='w-[200px] h-[50px] border-2 rounded-xl bg-gray-800 text-white flex items-center justify-center mx-auto mb-5'>
           <Text className='text-2xl text-white'>Book Now</Text>
         </TouchableOpacity>
       </View>
