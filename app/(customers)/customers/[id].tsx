@@ -7,7 +7,17 @@ import images from '@/constants/images';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface ShopData {
-  data: Array<any>;
+  data:{
+  id:string;
+adminId:string;
+shopName:string;
+shopAddress:string;
+shopDescription?:string|null;
+shopPhone?:string|null;
+shopEmail?:string|null;
+shopImages?:string|null;
+opened:boolean;
+  }[];
 }
 interface UserData {
   fullName?: string;
@@ -23,8 +33,13 @@ const Page = () => {
   useEffect(() => {
     const fetchShop = async () => {
       try {
-        const shopData = await getAllShops();
+        const shopData :ShopData | undefined = await getAllShops();
+      if(shopData){
         setShop(shopData);
+      }
+      else{
+        setShop({data:[]})
+      }
         const userData = await getUserById(id?.toString() || '');
         setUsers(userData);
       } catch (error) {
