@@ -5,7 +5,7 @@ import { getAllShops, getUserById } from '@/lib/users/user.action';
 import Shopcard from '@/components/Shopcard';
 import images from '@/constants/images';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { some } from '@/lib/session';
+
 
 interface ShopData {
   data:{
