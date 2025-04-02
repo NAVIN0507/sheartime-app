@@ -8,7 +8,7 @@ import InputField from '@/components/InputField'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import { createSession } from '@/lib/session'
-const Signin = async() => {
+const Signin = () => {
   const [email, setemail] = useState("");
   const router = useRouter();
   const [password, setpassword] = useState("");

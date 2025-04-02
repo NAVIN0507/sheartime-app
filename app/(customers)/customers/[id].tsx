@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, Image,  TextInput , TouchableOpacity, FlatList } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams } from 'expo-router';
 import { getAllShops, getUserById } from '@/lib/users/user.action';
@@ -72,17 +72,38 @@ const Page = () => {
     <ScrollView className="mb-5 bg-gray-50">
       <SafeAreaView className="bg-white">
         {/* Header */}
-        <View className="w-full h-20 bg-white shadow-md flex flex-row justify-between items-center px-4 rounded-b-2xl border-b-4 border-gray-200">
-          <Image className="w-36 h-16 rounded-full" source={images.sheartime_text} />
-          <View className="flex flex-row items-center gap-2">
-            <View className="bg-gray-400 rounded-full w-10 h-10 items-center justify-center">
-              <Icon name="bell" size={23} color="#FFFFFF" />
-            </View>
-            <View className="bg-gray-400 rounded-full w-10 h-10 items-center justify-center">
-              <Icon name="logout" size={23} color="#FFFFFF" className="rotate-180" />
-            </View>
-          </View>
-        </View>
+<View className="w-full h-20 bg-white shadow-md flex flex-row justify-between items-center px-4 rounded-b-2xl border-b-4 border-gray-200">
+  
+  {/* 🏪 Logo */}
+  <Image className="w-36 h-16 rounded-full" source={images.sheartime_text} />
+
+
+
+  {/* 🔔 Icons */}
+  <View className="flex flex-row items-center gap-3">
+    <TouchableOpacity className="bg-gray-300 rounded-full w-10 h-10 items-center justify-center">
+      <Icon name="bell" size={23} color="#FFFFFF" />
+    </TouchableOpacity>
+
+    <TouchableOpacity className="bg-gray-300 rounded-full w-10 h-10 items-center justify-center">
+      <Icon name="cart" size={23} color="#FFFFFF" />
+    </TouchableOpacity>
+
+    <TouchableOpacity className="bg-gray-300 rounded-full w-10 h-10 items-center justify-center">
+      <Icon name="menu" size={23} color="#FFFFFF" />
+    </TouchableOpacity>
+
+    {/* 👤 Profile Avatar */}
+    <TouchableOpacity>
+      <Image 
+        className="w-10 h-10 rounded-full" 
+        source={ images.dafault_logo} 
+      />
+    </TouchableOpacity>
+  </View>
+  
+</View>
+
 
         {/* 👋 Welcome Section */}
         <View className="px-6 mt-6 border-2 ml-6 mr-6 p-4  border-gray-400 rounded-lg">
@@ -131,7 +152,7 @@ const Page = () => {
                 />
               </View>
             )}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
           />
         </View>
 
@@ -154,7 +175,7 @@ const Page = () => {
                 />
               </View>
             )}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
           />
         </View>
 
@@ -177,7 +198,7 @@ const Page = () => {
                 />
               </View>
             )}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
           />
         </View>
 
